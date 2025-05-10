@@ -6,7 +6,7 @@ using TMPro;
 public class Scene2Controller : MonoBehaviour
 {
     [Header("Temporizador")]
-    [SerializeField] private float startTime = 180f;
+    [SerializeField] private float maxTime = 300f;
     private float remainingTime;
     private bool timerRunning = false;
 
@@ -23,17 +23,17 @@ public class Scene2Controller : MonoBehaviour
 
     void Start()
     {
-        remainingTime = startTime;
+        remainingTime = maxTime;
         timerRunning = true;
         winPanel.SetActive(false);
         losePanel.SetActive(false);
+        UpdateTimerUI();
     }
 
     void Update()
     {
         if (!timerRunning) return;
 
-        
         remainingTime -= Time.deltaTime;
         UpdateTimerUI();
 
@@ -57,6 +57,7 @@ public class Scene2Controller : MonoBehaviour
         if (levelEnded) return;
         levelEnded = true;
         losePanel.SetActive(true);
+        
         Invoke(nameof(RestartScene), 3f);
     }
 
@@ -68,12 +69,21 @@ public class Scene2Controller : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (levelEnded) return;
-        if (other.CompareTag("Player") && exitTrigger != null && other == exitTrigger)
+        // Condición de victoria
+        if (other.CompareTag("Player") && other == exitTrigger)
         {
             levelEnded = true;
             timerRunning = false;
             winPanel.SetActive(true);
+            
         }
     }
-}
 
+    public void PenalizeDeath(float penaltySeconds = 30f)
+    {
+        if (levelEnded) return;
+        remainingTime -= penaltySeconds;
+        if (remainingTime < 0f) remainingTime = 0f;
+        UpdateTimerUI();
+    }
+}

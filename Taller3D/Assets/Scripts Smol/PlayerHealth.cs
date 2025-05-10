@@ -3,8 +3,11 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Scene2Controller sceneController;
+
     private Vector3 initialPosition;
-    private void Start()
+
+    void Start()
     {
         initialPosition = spawnPoint.position;
     }
@@ -19,7 +22,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void Respawn()
     {
+        
+        sceneController.PenalizeDeath(30f);
+
+        
         transform.position = initialPosition;
+
+        
     }
 }
-
