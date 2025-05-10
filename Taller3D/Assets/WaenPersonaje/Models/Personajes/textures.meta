@@ -1,6 +1,10 @@
 fileFormatVersion: 2
-guid: b2590c0502e3e6b43a45e4633f48f212
+<<<<<<<< HEAD:Taller3D/Assets/Scenes/Smol.unity.meta
+guid: 9d4e2471ab3713b4abb70ac4a6ae17b0
+========
+guid: 171c6f019828c75419422f700876e902
 folderAsset: yes
+>>>>>>>> Waen:Taller3D/Assets/WaenPersonaje/Models/Personajes/textures.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
