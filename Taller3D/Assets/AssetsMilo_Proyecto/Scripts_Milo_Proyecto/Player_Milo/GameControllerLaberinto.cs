@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameControllerLaberinto : MonoBehaviour
 {
+    public G/*ameObject puerta;*/
+    public TextMeshProUGUI puntaje;
+
     // Llama al GameManager para activar un mecanismo
     public void ActivarMecanismo()
     {
-        GameManager.Instance.ActivateMechanism();
+        GameManagerMilo.Instance.ActivateMechanism();
     }
 
     // Retorna true si ya hay más de 4 mecanismos activados
+
+    private void Update()
+    {
+        //puerta.SetActive(MecanismosCompletos());
+        puntaje.text = GameManagerMilo.Instance.MechanismsActivated.ToString();
+    }
+
     public bool MecanismosCompletos()
     {
-        return GameManager.Instance.MechanismsActivated >= 4;
+        return GameManagerMilo.Instance.MechanismsActivated >= 4;
     }
 }

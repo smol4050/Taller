@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionsInterruptors : MonoBehaviour
+public class InteractionsInterruptors : MonoBehaviour, IInteractuable
+
 {
     public AudioSource myAudio;
-    public int interruptorActivado = 0;
+    GameControllerLaberinto gamecontro;
+
+    void Start()
+    {
+        gamecontro = FindObjectOfType<GameControllerLaberinto>();
+    }
 
     public void ActivarObjeto()
     {
@@ -14,7 +20,7 @@ public class InteractionsInterruptors : MonoBehaviour
             myAudio.Stop();
         }
 
-        interruptorActivado++;
-        Debug.Log("Interruptor activado. Total: " + interruptorActivado);
+        gamecontro.ActivarMecanismo();
+        Debug.Log("Interruptor activado. Total: ");
     }
 }
