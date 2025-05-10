@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PressureSwitch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Door currentDoor;
+    [SerializeField] private Animator animator;
+    private void OnTriggerStay(Collider other)
     {
-        
+        currentDoor.AddPressureSwitch(this);
+        animator.SetBool("Down", true);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        currentDoor.RemovePressureSwitch(this);
+        animator.SetBool("Down", false);
     }
 }
