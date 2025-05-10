@@ -20,7 +20,7 @@ public class GameManagerMilo : MonoBehaviour
     public void ActivateMechanism()
     {
         MechanismsActivated++;
-        UIController.Instance.UpdateCount(MechanismsActivated);
+        //UIController.Instance.UpdateCount(MechanismsActivated);
     }
 
 
