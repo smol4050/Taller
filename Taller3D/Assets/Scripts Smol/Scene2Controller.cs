@@ -21,7 +21,7 @@ public class Scene2Controller : MonoBehaviour
 
     private bool levelEnded = false;
 
-    void Start()
+    void OnEnable()
     {
         remainingTime = maxTime;
         timerRunning = true;
@@ -57,7 +57,6 @@ public class Scene2Controller : MonoBehaviour
         if (levelEnded) return;
         levelEnded = true;
         losePanel.SetActive(true);
-        
         Invoke(nameof(RestartScene), 3f);
     }
 
@@ -69,21 +68,18 @@ public class Scene2Controller : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (levelEnded) return;
-        // Condición de victoria
         if (other.CompareTag("Player") && other == exitTrigger)
         {
             levelEnded = true;
             timerRunning = false;
             winPanel.SetActive(true);
-            
         }
     }
 
     public void PenalizeDeath(float penaltySeconds = 30f)
     {
         if (levelEnded) return;
-        remainingTime -= penaltySeconds;
-        if (remainingTime < 0f) remainingTime = 0f;
+        remainingTime = Mathf.Max(0f, remainingTime - penaltySeconds);
         UpdateTimerUI();
     }
 }
