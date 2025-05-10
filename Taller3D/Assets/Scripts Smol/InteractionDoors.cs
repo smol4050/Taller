@@ -4,34 +4,37 @@ using UnityEngine;
 
 public class InteractionDoors : MonoBehaviour, IInteractuable
 {
-    [SerializeField]
-    private Animator doorAnimator;
+    //[SerializeField]
+    //private Animator doorAnimator;
 
-    [SerializeField]
-    private GameController controller;
+    //[SerializeField]
+    //private GameController controller;
 
-    [SerializeField]
-    private bool isMechanism = true;
+    //[SerializeField]
+    //private bool isMechanism = true;
 
-    private bool used = false;
+    //private bool used = false;
 
 
-    void OnTriggerStay(Collider other)
-    {
-        if (!used && other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
-        {
-            ActivarObjeto();
-        }
-    }
+
+    //void OnTriggerStay(Collider other)
+    //{
+    //    if (!used && other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        ActivarObjeto();
+    //    }
+    //}
 
     public void ActivarObjeto()
     {
-        used = true;
 
-        if (isMechanism)
-            controller.OnMechanismActivated();
+        Debug.Log("AbrirPuerta");
+        //    used = true;
 
-        if (doorAnimator != null)
-            doorAnimator.SetTrigger("Open");
+    //    if (isMechanism)
+    //        controller.OnMechanismActivated();
+
+    //    if (doorAnimator != null)
+    //        doorAnimator.SetTrigger("Open");
     }
 }
