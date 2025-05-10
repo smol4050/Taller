@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameControllerLaberinto : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Llama al GameManager para activar un mecanismo
+    public void ActivarMecanismo()
     {
-        
+        GameManager.Instance.ActivateMechanism();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Retorna true si ya hay más de 4 mecanismos activados
+    public bool MecanismosCompletos()
     {
-        
+        return GameManager.Instance.MechanismsActivated >= 4;
     }
 }
