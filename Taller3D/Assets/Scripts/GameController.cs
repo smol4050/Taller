@@ -1,19 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
 public class GameController : MonoBehaviour
 {
-    public Animator finalDoorAnimator;
-    public int mechanismsToOpen = 3;
+    public static GameController instance;
+    public Dictionary<string, int> figurasEnCaja;
 
-    void Update()
-    {
-    }
+    public TextMeshProUGUI textContadorCubos;
+    public TextMeshProUGUI textContadorEsferas;
+    public TextMeshProUGUI textContadorCapsulas;
 
-    public void OnMechanismActivated()
+
+    private void Awake()
     {
-        GameManager.Instance.ActivateMechanism();
-        if (GameManager.Instance.MechanismsActivated >= mechanismsToOpen)
+        if (instance == null)
         {
-            finalDoorAnimator.SetTrigger("Open");
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        figurasEnCaja = new Dictionary<string, int>()
+        {
+            { "Cubo", 0 },
+            { "Esfera", 0 },
+            { "Capsula", 0 }
+
+        };
     }
+
+    public void ActualizarContadores()
+    {
+        if(textContadorCubos != null)
+            textContadorCubos.text = figurasEnCaja["Cubo"].ToString();
+
+        if(textContadorEsferas != null)
+            textContadorEsferas.text = figurasEnCaja["Esfera"].ToString();
+
+        if (textContadorCapsulas != null)
+            textContadorCapsulas.text = figurasEnCaja["Capsula"].ToString();
+    }
+
+
 }
