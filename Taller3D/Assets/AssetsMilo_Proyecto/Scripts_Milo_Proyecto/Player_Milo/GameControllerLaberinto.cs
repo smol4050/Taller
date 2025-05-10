@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameControllerLaberinto : MonoBehaviour
 {
-    public GameObject puerta;
+    public G/*ameObject puerta;*/
     public TextMeshProUGUI puntaje;
 
     // Llama al GameManager para activar un mecanismo
@@ -18,7 +18,7 @@ public class GameControllerLaberinto : MonoBehaviour
 
     private void Update()
     {
-        puerta.SetActive(MecanismosCompletos());
+        //puerta.SetActive(MecanismosCompletos());
         puntaje.text = GameManagerMilo.Instance.MechanismsActivated.ToString();
     }
 
