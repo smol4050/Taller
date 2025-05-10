@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7097158552630432127}
   - component: {fileID: 435628966209392646}
   - component: {fileID: 848358854621602700}
-  - component: {fileID: 1026807804927412581}
+  - component: {fileID: 5867618411322609408}
   m_Layer: 0
   m_Name: _PrincipalPlayer
   m_TagString: Untagged
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 37ce708362b33b0429d198efd116f4a5, type: 2}
+  - {fileID: 2100000, guid: 95eb3dfd2217c0e4bb2b07286d3d745b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   _crouchCameraOffset: -0.2
   bobSpeed: 11
   bobAmount: 0.05
---- !u!114 &1026807804927412581
+--- !u!114 &5867618411322609408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dd407aab865a14e98bfb5e59deb90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distancia: 4
+  distancia: 1.5
   cam: {fileID: 7409998473904836810}
   textPressE: {fileID: 5767202496382567621}
 --- !u!1 &3513818775189250646
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 32107eb423f05234886f5e6e1777d4d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9187741f2973344db79a2205cd5dd27, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -633,7 +633,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 37ce708362b33b0429d198efd116f4a5, type: 2}
+  - {fileID: 2100000, guid: 6167067d1d139294fa7a23af2f922110, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -743,9 +743,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4d6ffe435c283fe4b87e4c12e4c53ac7, type: 2}
-  m_sharedMaterial: {fileID: 5374843572216277806, guid: 4d6ffe435c283fe4b87e4c12e4c53ac7,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -769,7 +768,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.6
+  m_fontSize: 36.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
